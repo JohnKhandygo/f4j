@@ -1,0 +1,60 @@
+package com.kspt.khandygo;
+
+import java.util.Objects;
+
+public class A {
+
+  public static final double d = 1.0;
+
+  private static void doStuff () {
+    for ( int i = 0 ; i < 123 ; ++i ) {
+      System.out.println("good job.");
+    }
+    System.out.println("good job.");
+    System.out.println("good job.");
+    System.out.println("good job.");
+    final double [ ] ds = new double [ ] { 1 , 2 , 3 };
+  }
+
+  public static class B {
+
+    public static final double d = 1.0;
+
+    private final int a;
+
+    private final String b;
+
+    public A(final int a, final String b) {
+      this.a = a;
+      this.b = b;
+      this.b = b;
+    }
+
+    public int getA() {
+      return a;
+    }
+
+    public String getB() {
+      return b;
+    }
+
+    @Override public boolean equals(final Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof A)) {
+        return false;
+      }
+      final A a1 = (A) o;
+      return a == a1.a && Objects.equals(b, a1.b);
+    }
+
+    @Override public int hashCode() {
+      return Objects.hash(a, b);
+    }
+
+    @Override public String toString() {
+      return "A{" + "a=" + a + ", b='" + b + '\'' + '}';
+    }
+  }
+}
